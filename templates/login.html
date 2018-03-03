@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="/static/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/registration_style.css">
+	<title>Prastuti</title>
+</head>
+<body class="valign-wrapper2">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-wrapper blue-grey darken-2">
+            <a href="#!" class="brand-logo"><span class="logo logoText valign-wrapper"><img src="/static/images/bhuLogo3.png"/>Prastuti'18</span></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#about">About Us</a></li>	
+                <li><a href="#">Register/Login</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#about">About Us</a></li>	
+                <li><a href="#">Register/Login</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container">
+            <div class="row valign">
+                <div class="col s12 m8 offset-m2 l8 offset-l2">
+                    <div class="card" style="margin-top:50px;">
+                        <form method="POST" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="card-content">
+                                <span class="card-title grey-text text-darken-2">Login Form</span>
+                                {% if error %}
+                                    <span class="red-text text-darken-2">{{error}}</span>
+                                {% endif %}
+                                <div class="row">
+                                    <div class="input-field col s12 required">
+                                        <i class="material-icons prefix">email</i>
+                                        {{form.email.errors}}
+                                        <label for="email">Email</label>
+                                        {{form.email}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12 required">
+                                        <i class="material-icons prefix">lock_open</i>
+                                        {{form.password.errors}}
+                                        <label for="password">Password</label>
+                                        {{form.password}}
+                                    </div>
+                                </div>
+                                <span class="grey-text text-darken-2">Not registered yet? <a href="{% url 'register' %}">Register Here</a></span>
+                            </div>
+                            <div class="card-action">
+                                <div class="right-align">
+                                    <button class="waves-effect waves-light btn" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- Page Footer -->
+    <footer class="page-footer blue-grey darken-3" style="margin-top:50px;">
+        <div class="footer-copyright blue-grey darken-4">
+            <div class="container">
+                <p>&copy; 2018 Copyright Prastuti : IIT-BHU, All Rights Reserved</p>
+                <a href="#" class="grey-text text-lighten-4 right">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+  	<script src="/static/js/materialize.min.js"></script>
+	<script src="/static/js/index_scripts.js"></script>
+</body>
+</html>
