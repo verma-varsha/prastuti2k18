@@ -1,0 +1,19 @@
+.logo{
+	font-weight: 100;
+	padding-left: 10px;	
+}
+.thin-text{
+	font-weight: 100;
+	background: rgba(96, 125, 139, .4);
+	padding: 40px;
+	border-radius: 10px;
+}
+
+.section-header{
+	font-weight: 100;
+}
+
+.logoText{
+    font-weight: 300;
+    padding-left: 10px;
+}
